@@ -514,6 +514,21 @@ int answerC(int *a, int i, int j, int k, int l, int m, char answer1[ ][ 11 ])
 		answer1[ m ][ 10 ] = ')';
 	}
 
+	for(i = 0; i < m; i++){
+		k = 0;
+		for(j = 0; j < 11; j++){
+			if(answer1[ m ][ j ] == answer1[ i ][ j ]){
+				k++;
+			}
+		}
+		if(k == 11){
+			return 0;
+		}
+		if(answer1[ m ][ 1 ] == answer1[ i ][ 7 ] && answer1[ m ][ 2 ] == answer1[ i ][ 8 ] && answer1[ m ][ 3 ] == answer1[ i ][ 9 ] && answer1[ m ][ 8 ] == answer1[ i ][ 2 ] && answer1[ m ][ 5 ] == answer1[ i ][ 5 ]){
+			return 0;
+		}
+	}
+
 	for(i = 0; i < 11; i++){
 		printf("%c",answer1[ m ][ i ]);
 	}
